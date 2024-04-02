@@ -1,3 +1,4 @@
+## Estos scenarios no tienen que ver con guardar registros en la base de datos, solo usar la información ya guardada
 Feature: Consulta de clientes usando el servicio REST de la barbería
 
   Yo como usuario
@@ -7,14 +8,14 @@ Feature: Consulta de clientes usando el servicio REST de la barbería
   Background: 
     Given El usuario está en Postman con acceso a los servicios de la barbería
 
-  @camino_feliz
+  
   Scenario: Consulta de todos los clientes exitosa 
     Given el usuario ingreso al servicio de consulta de todos los empleados 
     When ejecuta la petición GET al servicio 
     Then debería ver la información de todos los empleados 
     And debería obtener un código de respuesta 200
 
-  @camino_feliz
+  
   Scenario Outline: Consulta de un cliente exitosa 
     Given el usuario ingreso al servicio de consulta de un empleado por id
     When ingresa correctamente el id <id>
