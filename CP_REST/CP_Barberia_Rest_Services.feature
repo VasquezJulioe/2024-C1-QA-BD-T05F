@@ -16,14 +16,14 @@ Feature: Registro e inicio de sesión usando el servicio REST de la Barbería
     And el usuario debería quedar guardado en la BD
   
   @BD
-  Scenario: Ingreso de usuario exitoso 
+  Scenario: inicio de sesion de usuario exitoso 
     Given ingreso al servicio de inicio de sesión de usuario
     When ingresa sus credenciales correctamente
     And ejecuta la petición POST al servicio
     Then se debería recibir un código de respuesta 200
     And se debería guardar el registro de ingreso en la BD 
 
-Feature: Eliminar empleado de la base de datos usando el servicio REST de la barbería 
+Feature: Eliminar empleado usando servicio REST de la barberia
 
     Yo como usuario
     Quiero poder eliminar empleados registrados
@@ -39,7 +39,7 @@ Feature: Eliminar empleado de la base de datos usando el servicio REST de la bar
     And el empleado debería ser removido de la BD
     
 ## Estos scenarios no tienen que ver con guardar registros en la base de datos, solo usar la información ya guardada
-Feature: Consulta de clientes usando el servicio REST de la barbería
+Feature: Consulta de empleados usando servicio REST de la barberia
 
   Yo como usuario
   Quiero hacer uso del servicio de consulta de empleados 
@@ -82,7 +82,7 @@ Feature: Consulta de clientes usando el servicio REST de la barbería
         | 2000  |  
 
 
-Feature: Comprar de producto a través de los servicios REST de la barbería 
+Feature: Compra de producto a través de los servicios REST de la barbería 
 
     Yo como usuario
     Quiero comprar varios productos de la barbería
