@@ -30,10 +30,9 @@ Feature: Eliminar empleado de la base de datos usando el servicio REST de la bar
     Para limpiar eliminar información obsoleta
 
   Background: 
-        Given El usuario está en Postman con acceso a los servicios de la barbería
+        Given El usuario está en Postman con acceso al servicio de eliminar empleado
   @BD
   Scenario: Eliminar empleado exitosamente
-    Given El usuario ingreso al servicio de eliminar empleado
     When ingresa correctamente el id del empleado 
     And ejecuta la petición DELETE al servicio
     Then debería recibir un código de respuesta 204 
@@ -90,15 +89,13 @@ Feature: Comprar de producto a través de los servicios REST de la barbería
     Para verme mucho mejor 
 
   Background: 
-    Given El usuario está en Postman con acceso a los servicios de la barbería
+    Given El usuario está en Postman con acceso al servicio de compra de la barbería
     
   @BD
   Scenario: Compra exitosa de productos 
-    Given el usuario ingreso al servicio de compra de productos de la barbería
-    When ingresa los productos de interés y su cantidad correctamente
-    And ingresa sus credenciales correctamente y ejecuta la petición POST al servicio
-    Then debería recibir un código de respuesta 200
-    And la compra debería ser registrada en la BD
+    When ingresa los productos de interés correctamente y valida sus credenciales
+    And ejecuta la petición POST al servicio
+    Then la compra debería ser registrada en la BD
     And se deberían restar los productos disponibles en la BD
 
 Feature: Agendar cita a través de los servicios REST de la barbería 
@@ -108,11 +105,10 @@ Feature: Agendar cita a través de los servicios REST de la barbería
   Para consumir sus servicios y comprar sus productos 
 
   Background: 
-    Given El usuario está en Postman con acceso a los servicios de la barbería
+    Given El usuario está en Postman con acceso al servicio de citas de la barbería
   @BD
   Scenario: Agendar cita exitosamente
-    Given el usuario ingreso al servicio de agendar cita
     When ingresa correctamente sus credenciales 
     And  ejecuta la petición POST al servicio 
-    Then debería obtener un código de respuesta 200
+    Then debería recibir un mensaje de confirmaciòn al correo
     And debería quedar registrada la cita en la BD
