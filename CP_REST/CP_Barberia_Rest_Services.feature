@@ -13,8 +13,7 @@ Feature: Registro e inicio de sesión usando el servicio REST de la Barbería
     When ingresa sus credenciales correctamente 
     And ejecuta la petición POST al servicio
     Then debería recibir un código de respuesta 201
-    And debería ver un mensaje con su información asociada
-    And el usuario quedaría guardado en la BD
+    And el usuario debería quedar guardado en la BD
   
   @BD
   Scenario: Ingreso de usuario exitoso 
@@ -22,8 +21,7 @@ Feature: Registro e inicio de sesión usando el servicio REST de la Barbería
     When ingresa sus credenciales correctamente
     And ejecuta la petición POST al servicio
     Then se debería recibir un código de respuesta 200
-    And debería ver un token único para iniciar sesión
-    And se guardaria el registro de ingreso en la BD 
+    And se debería guardar el registro de ingreso en la BD 
 
 Feature: Eliminar empleado de la base de datos usando el servicio REST de la barbería 
 
@@ -100,8 +98,8 @@ Feature: Comprar de producto a través de los servicios REST de la barbería
     When ingresa los productos de interés y su cantidad correctamente
     And ingresa sus credenciales correctamente y ejecuta la petición POST al servicio
     Then debería recibir un código de respuesta 200
-    And la compra seria registrada en la BD
-    And se restarían los productos disponibles en la BD
+    And la compra debería ser registrada en la BD
+    And se deberían restar los productos disponibles en la BD
 
 Feature: Agendar cita a través de los servicios REST de la barbería 
 
