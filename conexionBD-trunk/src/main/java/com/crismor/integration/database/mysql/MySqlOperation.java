@@ -1,11 +1,11 @@
-package com.sofkau.integration.database.mysql;
+package com.crismor.integration.database.mysql;
 
-import com.sofkau.integration.database.DataBase;
+import com.crismor.integration.database.DataBase;
 
 import java.sql.*;
 
-import static com.sofkau.integration.database.mysql.MySqlConstants.CONNECTION_STRING;
-import static com.sofkau.integration.database.mysql.MySqlConstants.MY_SQL_JDBC_DRIVER;
+import static com.crismor.integration.database.mysql.MySqlConstants.CONNECTION_STRING;
+import static com.crismor.integration.database.mysql.MySqlConstants.MY_SQL_JDBC_DRIVER;
 
 public class MySqlOperation implements DataBase {
 
@@ -21,6 +21,10 @@ public class MySqlOperation implements DataBase {
 
     public String getSqlStatement() {
         return sqlStatement;
+    }
+
+    public Connection getConnection() {
+        return connection;
     }
 
     public void setSqlStatement(String sqlStatement) {
