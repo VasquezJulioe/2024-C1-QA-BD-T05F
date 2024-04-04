@@ -22,6 +22,7 @@ public class Main {
 
         conn = connect();
         insertIntoPersona();
+        insertIntoTelefono();
 //        selectAllFromPersona();
         conn.close();
 //        closeConnection();
@@ -90,26 +91,26 @@ public class Main {
             stmt.executeUpdate();
         }
 
-        for (int i = 0; i < 20; i++) {  // Inserting 2 records in this example
-            // Generate fake data
-            String cedula = faker.number().digits(10);
-            cedulasPersonas.add(cedula);
-            String nombre = faker.name().fullName();
-            String correo = faker.internet().emailAddress();
-            String direccion = faker.address().streetAddress();
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            Date fechaNacimiento = java.sql.Date.valueOf(sdf.format(faker.date().birthday()));
-
-            // Set values to the prepared statement
-            stmt.setString(1, cedula);
-            stmt.setString(2, nombre);
-            stmt.setString(3, correo);
-            stmt.setString(4, direccion);
-            stmt.setDate(5, fechaNacimiento);
-
-            // Execute the statement
-            stmt.executeUpdate();
-        }
+//        for (int i = 0; i < 20; i++) {  // Inserting 2 records in this example
+//            // Generate fake data
+//            String cedula = faker.number().digits(10);
+//            cedulasPersonas.add(cedula);
+//            String nombre = faker.name().fullName();
+//            String correo = faker.internet().emailAddress();
+//            String direccion = faker.address().streetAddress();
+//            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//            Date fechaNacimiento = java.sql.Date.valueOf(sdf.format(faker.date().birthday()));
+//
+//            // Set values to the prepared statement
+//            stmt.setString(1, cedula);
+//            stmt.setString(2, nombre);
+//            stmt.setString(3, correo);
+//            stmt.setString(4, direccion);
+//            stmt.setDate(5, fechaNacimiento);
+//
+//            // Execute the statement
+//            stmt.executeUpdate();
+//        }
 
     }
 
