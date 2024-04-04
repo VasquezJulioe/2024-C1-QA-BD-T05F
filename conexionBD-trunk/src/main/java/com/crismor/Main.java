@@ -10,7 +10,7 @@ public class Main {
 
     private static final String URL = "jdbc:mysql://localhost:3306/barberia";
     private static final String USER = "root";
-    private static final String PASSWORD = "0000";
+    private static final String PASSWORD = "johan2233Z.";
 
     private static Connection conn;
     private static Faker faker = new Faker();
@@ -54,7 +54,7 @@ public class Main {
         String sql = "INSERT INTO Persona (Cedula, Nombre, Correo, Direccion, FechaNacimiento) " +
                 "VALUES (?, ?, ?, ?, ?)";
         PreparedStatement stmt = conn.prepareStatement(sql);
-        for (int i = 0; i < 20; i++) {  // Inserting 2 records in this example
+        for (int i = 0; i < 50; i++) {  // Inserting 2 records in this example
             // Generate fake data
             String cedula = faker.number().digits(10);
             cedulasPersonas.add(cedula);
@@ -63,6 +63,7 @@ public class Main {
             String direccion = faker.address().streetAddress();
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             Date fechaNacimiento = java.sql.Date.valueOf(sdf.format(faker.date().birthday()));
+
 
             // Set values to the prepared statement
             stmt.setString(1, cedula);
