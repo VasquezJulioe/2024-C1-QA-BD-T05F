@@ -11,10 +11,10 @@ public class Main {
     private static final String SERVER = "localhost";
     private static final String DATA_BASE_NAME = "barberia";
     private static final String USER = "root";
-    private static final String PASSWORD = "0000";
+    private static final String PASSWORD = "1234";
 
     private static final String SELECT_ALL_FROM_PERSONA = String.format("select * from %s.Persona", DATA_BASE_NAME);
-    private static final String INSERT_LIBRO = "insert into libreriabuscalibre.libro values ('ABC5000', 'Jessica', '100', 'alfa');";
+    private static final String INSERT_TELEFONO = "insert into barberia.telefono values ('1111111111', '222-1234');";
     private static final MySqlOperation mySqlOperation = new MySqlOperation();
 
     public static void main(String[] args) throws SQLException {
@@ -29,6 +29,7 @@ public class Main {
 
         openConnection();
         selectAllFromPersona();
+        insertIntoTelefono();
         closeConnection();
 
 
@@ -47,9 +48,10 @@ public class Main {
         mySqlOperation.printResulset();
     }
 
-    public static void insertIntoLibro()  {
-        mySqlOperation.setSqlStatement(INSERT_LIBRO);
+    public static void insertIntoTelefono() throws SQLException {
+        mySqlOperation.setSqlStatement(INSERT_TELEFONO);
         mySqlOperation.executeSqlStatementVoid();
+        mySqlOperation.printResulset();
 
     }
 
