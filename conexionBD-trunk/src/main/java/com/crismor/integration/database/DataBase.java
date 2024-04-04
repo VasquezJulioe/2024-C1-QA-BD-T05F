@@ -1,4 +1,4 @@
-package com.sofkau.integration.database;
+package com.crismor.integration.database;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

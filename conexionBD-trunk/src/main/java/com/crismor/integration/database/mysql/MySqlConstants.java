@@ -1,4 +1,4 @@
-package com.sofkau.integration.database.mysql;
+package com.crismor.integration.database.mysql;
 
 public class MySqlConstants {
     public static final String MY_SQL_JDBC_DRIVER="com.mysql.cj.jdbc.Driver";
